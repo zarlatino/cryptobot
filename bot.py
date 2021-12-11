@@ -1,4 +1,6 @@
 from telegram.ext import Updater, CommandHandler
+from request import request, session
+import json
 
 PROXY = {'proxy_url': 'socks5://t2.learn.python.ru:1080',
     'urllib3_proxy_kwargs': {'username': 'learn', 'password': 'python'}}
@@ -17,8 +19,6 @@ def main(request=None):
     # Запускаем бота, он будет работать, пока мы его не остановим принудительно
     mybot.idle()
 
-    from request import request, session
-    import  json
 
 
     url = ' https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest'
